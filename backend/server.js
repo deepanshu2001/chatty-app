@@ -1,5 +1,5 @@
 import express from 'express'
-const app=express();
+import {app,server} from './socket/socket.js'
 import connectDB from './db/db.js';
 import dotenv from 'dotenv'
 import authRoutes from '../backend/routes/authroutes.js'
@@ -14,7 +14,7 @@ app.use(cookieParser());
 app.use("/api/auth",authRoutes);
 app.use('/api/messages',protectRoute,messageRoutes);
 app.use('/api/users',protectRoute,userRoutes);
-app.listen(PORT,()=>{
+server.listen(PORT,()=>{
     connectDB()
     console.log('App Listening on port '+PORT)
 })
