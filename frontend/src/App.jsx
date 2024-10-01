@@ -5,7 +5,7 @@ import Login from './pages/login/Login'
 import SignUp from './pages/signup/SignUp'
 import Home from './pages/home/Home'
 import { Routes,Route, Navigate } from 'react-router-dom'
-import { useAuthContext } from './context/AuthContext';
+import { useAuthContext } from './context/authContext';
 function App() {
  
  const {authUser}=useAuthContext();
