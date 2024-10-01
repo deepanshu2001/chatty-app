@@ -9,6 +9,7 @@ const useListenMessages = () => {
 
 	useEffect(() => {
 		socket?.on("newMessage", (newMessage) => {
+            
 			newMessage.shouldShake=true
             const sound=new Audio(notificatonSound);
             sound.play()
